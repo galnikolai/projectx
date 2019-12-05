@@ -27,7 +27,7 @@ class Drawer extends Component {
   }
 
   render() {
-    const cls = [Drawer]
+    const cls = ['Drawer']
 
     if (!this.props.isOpen) {
       cls.push('close')
@@ -41,7 +41,7 @@ class Drawer extends Component {
       links.push({to: '/quiz-creator', label: 'Создать тест', exact: false})
       links.push({to: '/logout', label: 'Выйти', exact: false})
     } else {
-      links.push(      {to: '/auth', label: 'Авторизация', exact: false})
+      links.push({to: '/auth', label: 'Авторизация', exact: false})
     }
 
     return (
