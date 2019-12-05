@@ -12,7 +12,7 @@ export function auth(email, password, isLogin) {
     }
     const response = await axios.post(url, authData)
     const data = response.data
-    const expirationDate = new Date(new Date().getTime() + Date.expiresIn * 1000)
+    const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
 
 
     localStorage.setItem('token', data.idToken)
@@ -43,7 +43,7 @@ export function autoLogAut(time) {
 export function logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('userId')
-    localStorage.removeItem('userId')
+    localStorage.removeItem('expirationDate')
     return {
         type: AUTH_LOGOUT
     }
